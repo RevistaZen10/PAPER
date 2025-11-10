@@ -244,44 +244,34 @@
 \usepackage{fancyhdr}
 \usepackage{hyperref}
 \usepackage{url}
-
-\documentclass[12pt,a4paper]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[brazilian]{babel}
-\usepackage{geometry}
-\usepackage{fancyhdr}
-\usepackage{hyperref}
-\usepackage{url}
+\usepackage{graphicx}
 
 % --- METADADOS COMPATÍVEIS COM REVISTAZEN ---
-% Estrutura: Nome | Instituição | ORCID
-% O parser da RevistaZen detecta padrões "Nome | Instituição | ORCID"
 \hypersetup{
   colorlinks=true,
   linkcolor=blue,
   urlcolor=cyan,
-  pdftitle={Tutorial de Integração Automática: Do Advanced Scientific Paper Generator para a RevistaZen},
-  pdfauthor={Carlos de Andrade, Alexandre},
-  pdfsubject={Este tutorial detalha o processo de integração 100\% compatível entre o "Advanced Scientific Paper Generator" e a plataforma de publicação "RevistaZen". O guia explica como os metadados (título, autor, resumo, palavras-chave) são automaticamente embutidos no arquivo PDF durante a compilação do LaTeX. Ao fazer o upload deste PDF na RevistaZen, a plataforma lê esses metadados e preenche automaticamente os formulários de submissão, agilizando o processo de publicação e obtenção de um DOI permanente.},
-  pdfkeywords={Integração Automática, LaTeX, Metadados PDF, RevistaZen, Advanced Scientific Paper Generator, Publicação Científica, DOI}
+  pdftitle={Tutorial Completo: Funcionalidades da RevistaZen - DOI Gratuito para Artigos Científicos},
+  pdfauthor={Revista, Zen},
+  pdfsubject={Este tutorial detalha todas as funcionalidades da plataforma RevistaZen, mostrando como obter DOI gratuito para artigos científicos de forma rápida e automatizada.},
+  pdfkeywords={RevistaZen, DOI Gratuito, Publicação Científica, LaTeX, Metadados, Zenodo, ORCID}
 }
 
 % Configurações da página
 \geometry{a4paper, margin=1in}
 \pagestyle{fancy}
 \fancyhf{}
-\rhead{Tutorial de Integração}
-\lhead{Advanced Scientific Paper Generator}
+\rhead{Tutorial RevistaZen}
+\lhead{Funcionalidades da Plataforma}
 \cfoot{\thepage}
 
-\title{\textbf{Tutorial de Integração Automática:}\\Do Advanced Scientific Paper Generator para a RevistaZen}
+\title{\textbf{Tutorial Completo: Funcionalidades da RevistaZen}\\DOI Gratuito para Artigos Científicos}
 
 \author{
-  SÉRGIO DE ANDRADE, PAULO\\[4pt]
-  \small Faculdade de Guarulhos (FG), Guarulhos, São Paulo\\
-  \small \texttt{andradepsa@gmail.com}\\
-  \small ORCID: \url{https://orcid.org/0009-0004-2555-3178}
+  REVISTA, ZEN\\[4pt]
+  \small Plataforma de Publicação Científica\\
+  \small \texttt{https://revistazen.pages.dev/}\\
+  \small ORCID: \url{https://orcid.org/0009-0007-6299-2008}
 }
 
 \date{\today}
@@ -291,40 +281,247 @@
 \thispagestyle{empty}
 
 \begin{abstract}
-\noindent Este tutorial detalha o processo de integração 100\% compatível entre o "Advanced Scientific Paper Generator" e a plataforma de publicação "RevistaZen". O guia explica como os metadados (título, autor, resumo, palavras-chave) são automaticamente embutidos no arquivo PDF durante a compilação do LaTeX. Ao fazer o upload deste PDF na RevistaZen, a plataforma lê esses metadados e preenche automaticamente os formulários de submissão, agilizando o processo de publicação e obtenção de um DOI permanente.
+\noindent Este tutorial completo apresenta todas as funcionalidades da plataforma RevistaZen, especializada em fornecer DOI gratuito para artigos científicos. A plataforma oferece integração automatizada com LaTeX, extração inteligente de metadados, publicação no Zenodo/CERN e geração instantânea de identificadores DOI permanentes. O sistema é otimizado para pesquisadores brasileiros, com suporte a currículos Lattes e reconhecimento acadêmico.
 \end{abstract}
 
 \vspace{1cm}
-\noindent \textbf{Palavras-chave:} Integração Automática, LaTeX, Metadados PDF, RevistaZen, Advanced Scientific Paper Generator, Publicação Científica, DOI.
+\noindent \textbf{Palavras-chave:} RevistaZen, DOI Gratuito, Publicação Científica, LaTeX, Metadados Automáticos, Zenodo, ORCID, Indexação Acadêmica.
 \clearpage
 
 \tableofcontents
 \clearpage
 
-\section{Introdução}
-Bem-vindo a este guia prático! O \textbf{Advanced Scientific Paper Generator} foi projetado para funcionar em perfeita harmonia com a \textbf{RevistaZen}. Esta compatibilidade de 100\% permite um fluxo de trabalho contínuo, automatizado e livre de erros, desde a criação do artigo até a obtenção de um DOI permanente.
+\section{Introdução à RevistaZen}
 
-\section{Pré-requisitos}
+A \textbf{RevistaZen} é uma plataforma brasileira de publicação científica que oferece \textbf{DOI gratuito} para artigos acadêmicos. Através de integração com o Zenodo/CERN, proporcionamos identificadores permanentes que aumentam a visibilidade e credibilidade da pesquisa.
+
+\subsection{Principais Funcionalidades}
+
 \begin{itemize}
-\item Código-fonte LaTeX gerado pelo Advanced Scientific Paper Generator.
-\item Compilador LaTeX (Overleaf, TeX Live, MiKTeX ou MacTeX).
-\item Acesso à plataforma \textbf{RevistaZen}.
+\item \textbf{DOI Permanente}: Identificador único internacional para seu artigo
+\item \textbf{Extração Automática de Metadados}: Sistema inteligente que lê informações do PDF
+\item \textbf{Integração com LaTeX}: Compatibilidade total com artigos em LaTeX
+\item \textbf{Publicação no Zenodo}: Repositório internacional do CERN
+\item \textbf{ORCID Institucional}: \url{https://orcid.org/0009-0007-6299-2008}
+\item \textbf{Indexação Automática}: Google Scholar e bases acadêmicas
 \end{itemize}
 
-\section{Guia Passo a Passo}
-\subsection{Passo 1: Gerar o código LaTeX}
-Use o gerador para criar o artigo e copie o código da seção “Final LaTeX Source”.
+\section{Fluxo de Trabalho na Plataforma}
 
-\subsection{Passo 2: Compilar o PDF}
-Cole o código em seu compilador LaTeX e compile para gerar o arquivo PDF com metadados embutidos.
+\subsection{Passo 1: Acesso à Plataforma}
 
-\subsection{Passo 3: Fazer upload na RevistaZen}
-Envie o PDF gerado para a plataforma RevistaZen.  
-Os campos **Nome**, **Instituição/Afiliação** e **ORCID** serão extraídos automaticamente dos metadados.
+\begin{enumerate}
+\item Acesse: \url{https://revistazen.pages.dev/}
+\item Clique em \textbf{"Publicar Meu Artigo"}
+\item O sistema redireciona para a ferramenta de upload
+\end{enumerate}
+
+\subsection{Passo 2: Upload do Artigo}
+
+A plataforma aceita arquivos PDF com as seguintes características:
+
+\begin{itemize}
+\item \textbf{Formato}: PDF gerado a partir de LaTeX
+\item \textbf{Metadados}: Título, autores, afiliação, ORCID no formato correto
+\item \textbf{Tamanho}: Até 100MB (suficiente para a maioria dos artigos)
+\end{itemize}
+
+\subsection{Passo 3: Extração Automática de Metadados}
+
+O sistema da RevistaZen possui um parser inteligente que:
+
+\begin{verbatim}
+1. Lê os metadados embutidos no PDF
+2. Extrai título do artigo
+3. Identifica autores e afiliações
+4. Detecta ORCIDs pessoais
+5. Captura resumo/abstract
+6. Extrai palavras-chave
+\end{verbatim}
+
+\subsection{Passo 4: Revisão e Ajustes}
+
+\begin{itemize}
+\item \textbf{Autores do PDF}: Editáveis (nome, afiliação, ORCID pessoal)
+\item \textbf{Autor RevistaZen}: Fixo com ORCID institucional: 0009-0007-6299-2008
+\item \textbf{Formato Recomendado}: "Sobrenome, Nome"
+\item \textbf{ORCID Pessoal}: Opcional mas recomendado
+\end{itemize}
+
+\subsection{Passo 5: Publicação e DOI}
+
+\begin{enumerate}
+\item Clique em \textbf{"Gerar DOI Permanente"}
+\item Processamento automático no Zenodo
+\item Geração do DOI em poucos minutos
+\item Recebimento do link permanente
+\end{enumerate}
+
+\section{Integração com LaTeX}
+
+\subsection{Metadados no LaTeX}
+
+Para máxima compatibilidade, use este formato em seu preâmbulo LaTeX:
+
+\begin{verbatim}
+\hypersetup{
+  pdftitle={Título do Artigo},
+  pdfauthor={Sobrenome, Nome | Instituição | ORCID},
+  pdfsubject={Resumo do artigo},
+  pdfkeywords={palavra1, palavra2, palavra3}
+}
+\end{verbatim}
+
+\subsection{Exemplo de Estrutura Recomendada}
+
+\begin{verbatim}
+\author{
+  SILVA, João Paulo\\
+  Universidade de São Paulo (USP)\\
+  ORCID: 0000-0000-0000-0000
+  \and
+  SANTOS, Maria Oliveira\\
+  Universidade Estadual de Campinas (UNICAMP)\\
+  ORCID: 0000-0000-0000-0001
+}
+\end{verbatim}
+
+\section{Benefícios do DOI da RevistaZen}
+
+\subsection{Para Pesquisadores}
+
+\begin{itemize}
+\item \textbf{Currículo Lattes}: Adicione o DOI nas produções bibliográficas
+\item \textbf{Reconhecimento Acadêmico}: Comprovação de publicação científica
+\item \textbf{Citações Permanentes}: Seu artigo pode ser citado para sempre
+\item \textbf{Visibilidade Global}: Indexação em bases internacionais
+\end{itemize}
+
+\subsection{Para Instituições}
+
+\begin{itemize}
+\item \textbf{Aumento do Impacto}: Mais visibilidade para a produção científica
+\item \textbf{Indicadores de Produção}: Facilita o acompanhamento métrico
+\item \textbf{Custo Zero}: Sem taxas para os pesquisadores
+\item \textbf{Integração com ORCID}: Padrão internacional de identificação
+\end{itemize}
+
+\section{Funcionalidades Técnicas Avançadas}
+
+\subsection{Sistema de Upload Inteligente}
+
+\begin{itemize}
+\item \textbf{Drag and Drop}: Arraste e solte o arquivo PDF
+\item \textbf{Validação Automática}: Verificação de formato e metadados
+\item \textbf{Feedback Visual}: Indicadores de progresso e status
+\item \textbf{Processamento em Background}: Não trava a interface
+\end{itemize}
+
+\subsection{Extração de Metadados}
+
+O algoritmo de extração:
+
+\begin{verbatim}
+1. Busca metadados nativos do PDF
+2. Analisa a primeira página em busca de título
+3. Identifica padrões de autores e afiliações
+4. Procura por ORCIDs no formato padrão
+5. Localiza resumos e palavras-chave
+6. Oferece edição manual quando necessário
+\end{verbatim}
+
+\subsection{Integração com Zenodo}
+
+\begin{itemize}
+\item \textbf{API Automatizada}: Comunicação direta com Zenodo
+\item \textbf{Metadados Padronizados}: Schema de metadados do DataCite
+\item \textbf{Preservação Digital}: Garantia de permanência no CERN
+\item \textbf{Estatísticas de Acesso}: Dados de visualizações e downloads
+\end{itemize}
+
+\section{Exemplos de Uso}
+
+\subsection{Artigo de Conferência}
+
+\begin{verbatim}
+Título: "Análise de Algoritmos para Processamento de Big Data"
+Autores: "Silva, João | USP | 0000-0000-0000-0001"
+DOI: https://doi.org/10.5072/zenodo.1234567
+\end{verbatim}
+
+\subsection{Artigo de Pesquisa}
+
+\begin{verbatim}
+Título: "Estudo sobre Machine Learning Aplicado à Saúde"
+Autores: "Santos, Maria | UNICAMP | 0000-0000-0000-0002"
+DOI: https://doi.org/10.5072/zenodo.1234568
+\end{verbatim}
+
+\section{Dicas e Melhores Práticas}
+
+\subsection{Preparação do Artigo}
+
+\begin{itemize}
+\item Use \textbf{LaTeX} para melhor compatibilidade
+\item Inclua \textbf{todos os metadados} no preâmbulo
+\item Formate autores como \textbf{"Sobrenome, Nome"}
+\item Adicione \textbf{ORCIDs} quando disponível
+\item Inclua \textbf{resumo e palavras-chave} em inglês e português
+\end{itemize}
+
+\subsection{Após a Publicação}
+
+\begin{itemize}
+\item Adicione o DOI no \textbf{Currículo Lattes}
+\item Use o DOI para \textbf{citações em outros trabalhos}
+\item Compartilhe o link nas \textbf{redes acadêmicas}
+\item Monitore as \textbf{estatísticas de acesso} no Zenodo
+\end{itemize}
+
+\section{Suporte e Recursos}
+
+\subsection{Recursos Disponíveis}
+
+\begin{itemize}
+\item \textbf{Site Oficial}: \url{https://revistazen.pages.dev/}
+\item \textbf{Tutorial Interativo}: Disponível na plataforma
+\item \textbf{Exemplos de Código}: Modelos LaTeX compatíveis
+\item \textbf{Publicações Existentes}: \url{https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Revista%2C%20Zen%22&l=list&p=1&s=10&sort=bestmatch}
+\end{itemize}
+
+\subsection{Suporte Técnico}
+
+Para dúvidas e suporte:
+
+\begin{itemize}
+\item Consulte o tutorial interativo na plataforma
+\item Verifique as publicações existentes como referência
+\item Utilize os modelos de metadados fornecidos
+\item Teste com artigos menores antes de publicações importantes
+\end{itemize}
 
 \section{Conclusão}
-A integração entre o \textbf{Advanced Scientific Paper Generator} e a \textbf{RevistaZen} representa um avanço na automação da publicação científica.  
-Os metadados incorporados tornam o processo mais rápido, preciso e confiável.
+
+A \textbf{RevistaZen} representa um avanço significativo na democratização da publicação científica no Brasil. Através de:
+
+\begin{itemize}
+\item \textbf{Processo Automatizado}: Redução de barreiras técnicas
+\item \textbf{Custo Zero}: Acesso gratuito a DOI permanente
+\item \textbf{Integração Inteligente}: Compatibilidade com fluxos de trabalho existentes
+\item \textbf{Padrões Internacionais}: Conformidade com ORCID e Zenodo
+\item \textbf{Suporte à Pesquisa Brasileira}: Foco nas necessidades locais
+\end{itemize}
+
+A plataforma está preparada para impulsionar a visibilidade e o impacto da produção científica brasileira, proporcionando aos pesquisadores ferramentas profissionais sem custos adicionais.
+
+\vspace{1cm}
+
+\begin{center}
+\textbf{RevistaZen - DOI Gratuito para Ciência Brasileira}\\
+\url{https://revistazen.pages.dev/}\\
+ORCID Institucional: \url{https://orcid.org/0009-0007-6299-2008}\\
+Publicações no Zenodo: \url{https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Revista%2C%20Zen%22&l=list&p=1&s=10&sort=bestmatch}
+\end{center}
 
 \end{document}
 
